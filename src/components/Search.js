@@ -53,4 +53,5 @@ const Search = props =>
     </div>
   </form>;
 
+console.log(Search);
 export default Search;

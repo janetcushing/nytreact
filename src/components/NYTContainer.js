@@ -5,25 +5,40 @@ import Col from "./Col";
 import Panel from "./Panel";
 import Jumbotron from "./Jumbotron";
 import Form from "./Form";
-import ArticleDetail from "./ArticleDetail";
-import API from "../utils/API";
+import Results from "./Results";
+// import API from "../utils/API";
 
 class NYTContainer extends Component {
   state = {
     result: {},
-    search: ""
+    search: ''
   };
 
   // When this component mounts, search for the movie "The Matrix"
-  componentDidMount() {
-    this.searchArticles("Obama");
-  }
+  // componentDidMount() {
+  //   let query1 = ({
+  //     'q': "obama",
+  //     'begin_date': "20180101",
+  //     'end_date': "20180131"
+  //   });
+  //   console.log("query1: ");
+  //   console.log(query1);
+  //   this.searchArticles(query1);
+  // }
 
-  searchArticles = query => {
-    API.search(query)
-      .then(res => this.setState({ result: res.data }))
-      .catch(err => console.log(err));
-  };
+  // searchArticles = query => {
+  //   console.log("Im in searchArticles")
+  //   query = ({
+  //     'q': "obama",
+  //     'begin_date': "20180101",
+  //     'end_date': "20180131"
+  //   });
+  //   console.log("query: ");
+  //   console.log(query);
+  //   API.search(query)
+  //     .then(res => this.setState({ result: res.data }))
+  //     .catch(err => console.log(err));
+  // };
 
   handleInputChange = event => {
     const value = event.target.value;
@@ -59,11 +74,7 @@ class NYTContainer extends Component {
           <Col size="sm-12">
             <Panel heading="Top Articles">
               {this.state.result.title
-                ? <ArticleDetail
-                    snippit={this.state.result.snippet}
-                    url={this.state.result.web_url}
-                    date={this.state.result.pub_date}
-                  />
+                ? <Results/>
                 : <h3>No Results to Display</h3>}
             </Panel>
           </Col>  
