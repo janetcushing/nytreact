@@ -1,20 +1,21 @@
 import React from "react";
 
+
 const ArticleDetail = props => (
   <div className="text-center">
    <h3>
       Title: {props.title}
     </h3>
-    <h3>
+    <p>
       URL: {props.url}
-    </h3>
-    <h3>
+    </p>
+    <p>
       Snippet: {props.snippet}
-    </h3>
-    <h3>
+    </p>
+    <p>
       Date Published: {props.date}
-    </h3>
+    </p>
   </div>
 );
-
+console.log(ArticleDetail);
 export default ArticleDetail;
