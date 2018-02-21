@@ -46,7 +46,9 @@ class Form extends Component {
           "date_pub": response.data.response.docs[0].date_pub ,
           "snippet": response.data.response.docs[0].snippet
         }
-       return details;
+        this.setState({
+          result: details
+        });
       })
       .catch(error => {
         console.log(error);

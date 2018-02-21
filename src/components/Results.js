@@ -1,5 +1,6 @@
 import React from "react";
 import ArticleDetail from "./ArticleDetail";
+import Form from "./Form";
 
 const Results = props =>
   <ul className="list-group">
